@@ -258,15 +258,15 @@ export default class Preloader extends EventEmitter{
         if(difference > 0){
             console.log("swipped up");
             this.removeEventListeners();
-            this.playSecondIntro;
+            this.playSecondIntro();
         }
         this.initalY = null;
     }
 
     removeEventListeners(){
         window.removeEventListener("wheel", this.scrollOnceEvent)
-        window.removeEventListener("touchstart", this.scrollOnceEvent)
-        window.removeEventListener("touchmove", this.scrollOnceEvent)
+        window.removeEventListener("touchstart", this.touchStart)
+        window.removeEventListener("touchmove", this.toucheMove)
     }
 
     async playIntro(){
@@ -276,8 +276,8 @@ export default class Preloader extends EventEmitter{
         this.touchStart = this.onTouch.bind(this);
         this.toucheMove = this.onTouchMove.bind(this);
         window.addEventListener("wheel", this.scrollOnceEvent)
-        window.addEventListener("touchstart", this.scrollOnceEvent)
-        window.addEventListener("touchmove", this.scrollOnceEvent)
+        window.addEventListener("touchstart", this.touchStart)
+        window.addEventListener("touchmove", this.toucheMove)
     }
 
     async playSecondIntro(){

@@ -183,7 +183,7 @@ export default class Controls{
                     }
                 }).to(this.camera.orthographicCamera.position, {
                     y: 1.5,
-                    x: -1,
+                    x: 0,
                 })
                 this.fourthMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
@@ -194,15 +194,15 @@ export default class Controls{
                         invalidateOnRefresh: true,
                     }
                 }).to(this.camera.orthographicCamera.position, {
-                    y: 7.5,
-                    x: 3.9,
+                    y: 6.5,
+                    x: 2,
                 },"same").to(this.camera.orthographicCamera.rotation, {
                     x: 0,
                     y: -Math.PI/3.85,
                 }, "same").to(this.room.scale, {
-                    x: 0.8,
-                    y: 0.8,
-                    z: 0.8,
+                    x: 0.6,
+                    y: 0.6,
+                    z: 0.6,
                 }, "same");
             },
             "all": ()=> {
